@@ -1,3 +1,7 @@
+output "maps_creators_id" {
+  description = "Map of id values across all maps_creators, keyed the same as var.maps_creators"
+  value       = { for k, v in azurerm_maps_creator.maps_creators : k => v.id }
+}
 output "maps_creators_location" {
   description = "Map of location values across all maps_creators, keyed the same as var.maps_creators"
   value       = { for k, v in azurerm_maps_creator.maps_creators : k => v.location }
